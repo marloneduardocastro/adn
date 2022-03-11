@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  nosql:
+    document-base-package: "com.experience.mongo.repository"
+spring:
+  application:
+    name: "DNA Mutant Search"
+  data:
+    mongodb:
+#      uri: "mongodb://admin:admin@3.212.189.37:27017/admin?replicaSet=rs0&retryWrites=true&w=majority&maxPoolSize=15&connectTimeoutMS=30000"
+      auto-index-creation: false

@@ -1,0 +1,1 @@
+ 2javaXhrBsrc/main/java/com/mutants/adn/domain/utility/MutantProperties.java
