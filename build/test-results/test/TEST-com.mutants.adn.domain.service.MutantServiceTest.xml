@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mutants.adn.domain.service.MutantServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-10T18:39:43" hostname="PSOFKA0386" time="0.581">
+  <properties/>
+  <testcase name="dna is valid and is not mutant" classname="com.mutants.adn.domain.service.MutantServiceTest" time="0.571"/>
+  <testcase name="dna is not valid" classname="com.mutants.adn.domain.service.MutantServiceTest" time="0.002"/>
+  <testcase name="dna is valid and is mutant" classname="com.mutants.adn.domain.service.MutantServiceTest" time="0.004"/>
+  <testcase name="dna previously validated" classname="com.mutants.adn.domain.service.MutantServiceTest" time="0.003"/>
+  <system-out><![CDATA[13:39:43.805 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start MutantService.isMutant(dna=[ATGCGA, CAGTGC, TTATTT, AGACGG, GCGTCA, TCACTG])
+13:39:43.809 [Test worker] INFO com.mutants.adn.domain.service.MutantService - validating DNAChain...
+13:39:43.811 [Test worker] INFO com.mutants.adn.domain.service.MutantService - DNA isValid
+13:39:43.816 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start getDnaChains
+13:39:43.818 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start countMatchMutantSequence
+13:39:43.819 [Test worker] INFO com.mutants.adn.domain.service.MutantService - After validate DNA isMutant=false
+13:39:43.833 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start MutantService.isMutant(dna=[XVBM, CAG, TTAT, AGAG, CCCC, TG])
+13:39:43.834 [Test worker] INFO com.mutants.adn.domain.service.MutantService - validating DNAChain...
+13:39:43.836 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start MutantService.isMutant(dna=[ATGCGA, CAGTGC, TTATGT, AGAAGG, CCCCTA, TCACTG])
+13:39:43.836 [Test worker] INFO com.mutants.adn.domain.service.MutantService - validating DNAChain...
+13:39:43.837 [Test worker] INFO com.mutants.adn.domain.service.MutantService - DNA isValid
+13:39:43.837 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start getDnaChains
+13:39:43.837 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start countMatchMutantSequence
+13:39:43.837 [Test worker] INFO com.mutants.adn.domain.service.MutantService - After validate DNA isMutant=true
+13:39:43.840 [Test worker] INFO com.mutants.adn.domain.service.MutantService - Start MutantService.isMutant(dna=[ATGCGA, CAGTGC, TTATGT, AGAAGG, CCCCTA, TCACTG])
+13:39:43.840 [Test worker] INFO com.mutants.adn.domain.service.MutantService - validating DNAChain...
+13:39:43.841 [Test worker] INFO com.mutants.adn.domain.service.MutantService - DNA isValid
+13:39:43.841 [Test worker] INFO com.mutants.adn.domain.service.MutantService - DNA chain has already been previously validated
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

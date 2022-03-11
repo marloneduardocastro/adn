@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mutants.adn.domain.service.StatsServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-10T18:39:43" hostname="PSOFKA0386" time="0.043">
+  <properties/>
+  <testcase name="[1] totalHuman=100, totalMutant=40" classname="com.mutants.adn.domain.service.StatsServiceTest" time="0.033"/>
+  <testcase name="[2] totalHuman=50, totalMutant=10" classname="com.mutants.adn.domain.service.StatsServiceTest" time="0.002"/>
+  <testcase name="[3] totalHuman=80, totalMutant=80" classname="com.mutants.adn.domain.service.StatsServiceTest" time="0.002"/>
+  <testcase name="get_Stats_When_Total_Human_is_0()" classname="com.mutants.adn.domain.service.StatsServiceTest" time="0.002"/>
+  <system-out><![CDATA[13:39:43.902 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Start StatsService.getStats()
+13:39:43.903 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Calculate Ratio of DNAStatsDTO(totalMutants=40, totalHumans=100, ratio=0.0)
+13:39:43.919 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Start StatsService.getStats()
+13:39:43.919 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Calculate Ratio of DNAStatsDTO(totalMutants=10, totalHumans=50, ratio=0.0)
+13:39:43.922 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Start StatsService.getStats()
+13:39:43.922 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Calculate Ratio of DNAStatsDTO(totalMutants=80, totalHumans=80, ratio=0.0)
+13:39:43.925 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Start StatsService.getStats()
+13:39:43.926 [Test worker] INFO com.mutants.adn.domain.service.StatsService - Calculate Ratio of DNAStatsDTO(totalMutants=40, totalHumans=0, ratio=0.0)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
