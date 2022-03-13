@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > StatsService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.mutants.adn.domain.service</a>
+</div>
+
+<h1>Coverage Summary for Class: StatsService (com.mutants.adn.domain.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StatsService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94,1%
+  </span>
+  <span class="absValue">
+    (16/17)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">StatsService$MockitoMock$853591246</td>
+  </tr>
+  <tr>
+    <td class="name">StatsService$MockitoMock$853591246$auxiliary$AP6aNBgT</td>
+  </tr>
+  <tr>
+    <td class="name">StatsService$MockitoMock$853591246$auxiliary$BYtBWExu</td>
+  </tr>
+  <tr>
+    <td class="name">StatsService$MockitoMock$853591246$auxiliary$qnUYwvEk</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94,1%
+  </span>
+  <span class="absValue">
+    (16/17)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.mutants.adn.domain.service;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.mutants.adn.domain.dto.DNAStatsDTO;
+<i class="no-highlight">4</i>&nbsp;import com.mutants.adn.repository.dna_validation.DnaValidationRepository;
+<i class="no-highlight">5</i>&nbsp;import lombok.RequiredArgsConstructor;
+<i class="no-highlight">6</i>&nbsp;import lombok.extern.slf4j.Slf4j;
+<i class="no-highlight">7</i>&nbsp;import org.springframework.stereotype.Service;
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;import java.util.stream.Stream;
+<i class="no-highlight">10</i>&nbsp;
+<b class="fc"><i class="no-highlight">11</i>&nbsp;@Slf4j</b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;@RequiredArgsConstructor</b>
+<i class="no-highlight">13</i>&nbsp;@Service
+<i class="no-highlight">14</i>&nbsp;public class StatsService {
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    private final DnaValidationRepository dnaValidationRepository;
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;    public DNAStatsDTO getStats() {
+<b class="fc"><i class="no-highlight">19</i>&nbsp;        log.info(&quot;Start StatsService.getStats()&quot;);</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        return Stream.of(DNAStatsDTO.builder().build())</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;                .map(dnaStatsDTO -&gt; dnaStatsDTO.toBuilder()</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;                        .totalHumans((int)dnaValidationRepository.countByIsMutant(Boolean.FALSE))</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;                        .totalMutants((int)dnaValidationRepository.countByIsMutant(Boolean.TRUE))</b>
+<b class="fc"><i class="no-highlight">24</i>&nbsp;                        .build()</b>
+<i class="no-highlight">25</i>&nbsp;                )
+<b class="fc"><i class="no-highlight">26</i>&nbsp;                .map(dnaStatsDTO -&gt; dnaStatsDTO.toBuilder()</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;                        .ratio(calculateRatio(dnaStatsDTO))</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;                        .build()</b>
+<i class="no-highlight">29</i>&nbsp;                )
+<b class="fc"><i class="no-highlight">30</i>&nbsp;                .findAny()</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;                .orElse(DNAStatsDTO.builder().build());</b>
+<i class="no-highlight">32</i>&nbsp;    }
+<i class="no-highlight">33</i>&nbsp;
+<i class="no-highlight">34</i>&nbsp;    private float calculateRatio(DNAStatsDTO dnaStatsDTO) {
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        log.info(&quot;Calculate Ratio of {}&quot;, dnaStatsDTO);</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        return dnaStatsDTO.getTotalHumans() == 0</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;                ? dnaStatsDTO.getTotalMutants()</b>
+<b class="fc"><i class="no-highlight">38</i>&nbsp;                : (float) dnaStatsDTO.getTotalMutants() / dnaStatsDTO.getTotalHumans();</b>
+<i class="no-highlight">39</i>&nbsp;    }
+<i class="no-highlight">40</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-12 18:25</div>
+</div>
+</body>
+</html>

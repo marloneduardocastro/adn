@@ -1,1 +1,1 @@
- 2javaX	hr;src/main/java/com/mutants/adn/domain/enums/DNABaseEnum.java
+ 2javaX	hr;src/main/java/com/mutants/adn/domain/enums/DNABaseEnum.java

@@ -1,1 +1,1 @@
- 2javaXhr9src/main/java/com/mutants/adn/domain/dto/DNAStatsDTO.java
+ 2javaXhr9src/main/java/com/mutants/adn/domain/dto/DNAStatsDTO.java

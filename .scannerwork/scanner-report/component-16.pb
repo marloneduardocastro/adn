@@ -1,1 +1,1 @@
- 2javaX=hrBsrc/test/java/com/mutants/adn/entrypoint/MutantControllerTest.java
+ 2javaX=hrBsrc/test/java/com/mutants/adn/entrypoint/MutantControllerTest.java

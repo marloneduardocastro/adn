@@ -1,1 +1,1 @@
- 2javaX)hr>src/main/java/com/mutants/adn/domain/service/StatsService.java
+ 2javaX)hr>src/main/java/com/mutants/adn/domain/service/StatsService.java
