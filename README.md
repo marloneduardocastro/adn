@@ -1,5 +1,5 @@
 # Examen
-Technical Test '' - Mutant Project. API REST to identify if a human is a mutant given the DNA and store and make available the statistics of verifications   the exposed method (humans, mutants and ratio).
+Mercado Libre '' Prueba Tecnica.
 
 ## Required Setup
 * Java 1.13 
@@ -8,18 +8,42 @@ Technical Test '' - Mutant Project. API REST to identify if a human is a mutant 
 
 database:
 ```
-cd ./src/main/docker
-docker-compose up -d
+MongoDB 4.4 Community Edition
+AWS
+uri: "mongodb://admin:XXXXX@3.212.189.37:27017/admin"
+SO: Linux Ubuntu 20.04
+```
+Codigo:
+```
+Java 1.13
+Framework: SprintBoot 
+Test: JUnit
+IDE: IntelliJ IDEA 2021.2.3
+Contenedor: Docker
+Repositorio: Github
 ```
 
-Service:
+Servicios:
 ```
-$ ./mvnw
-  or
-$ mvnw (windows)
+AWS
+SO: Linux Ubuntu 20.04
+GET
+http://3.212.189.37/stats
+Response:
+{
+    "ratio": 1.0,
+    "count_mutant_dna": 2,
+    "count_human_dna": 2
+}
+
+POST
+http://3.212.189.37/mutant
+Request:
+{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCTAAT","TCTCTC"]}
+Response:
+Mutante 200 OK
+No mutante 403Forbidden
 ```
-
-
 
 ## Examen
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar
