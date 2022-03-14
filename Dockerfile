@@ -2,7 +2,12 @@ FROM openjdk:13-jdk-slim
 
 EXPOSE 8080
 
-ADD  ./adn-0.0.1-SNAPSHOT.jar app.jar
-ADD  ./application.yml application.yml
+VOLUME /tmp
 
-ENTRYPOINT ["java", "-jar","app.jar"]
+RUN mkdir /app
+RUN mkdir /config
+
+COPY build/resources/main/application.yml config/application.yml
+COPY build/libs/*.jar app/app.jar
+
+ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/app.jar"] "-XX:+UnlockExperimentalVMOptions", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/app.jar"]
