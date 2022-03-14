@@ -33,7 +33,7 @@ Arquitectura DDD
 Servicios:
 ```
 AWS
-SO: Linux Ubuntu 20.04
+SO: Linux Ubuntu 20.04 (Se cargaron usando docker)
 GET
 http://3.212.189.37/stats
 Response:
