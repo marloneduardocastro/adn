@@ -1,5 +1,7 @@
 # Examen
 Mercado Libre '' Prueba Tecnica.
+Marlon Eduardo Castro
+marloncastro77@gmail.com
 
 ## Required Setup
 * Java 1.13 
@@ -19,8 +21,12 @@ Java 1.13
 Framework: SprintBoot 
 Test: JUnit
 IDE: IntelliJ IDEA 2021.2.3
+Manejo de dependencias: Gradlew
 Contenedor: Docker
 Repositorio: Github
+Para los servicios se uso programación funcional (stream)
+Para correrlo localmente con la clase AdnApplication
+Arquitectura DDD
 ```
 
 Servicios:
@@ -43,6 +49,13 @@ Request:
 Response:
 Mutante 200 OK
 No mutante 403Forbidden
+```
+
+Estadísticas código:
+
+```
+En la carpeta .scannerwork resultados generados por Sonar (issues, codesmells, vulnerabilidades)
+En la carpeta Cobertura: resultados generados por la cobertura en promedio un 90%
 ```
 
 ## Examen
