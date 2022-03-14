@@ -25,7 +25,7 @@ Manejo de dependencias: Gradlew
 Contenedor: Docker
 Repositorio: Github
 Para los servicios se uso programación funcional (stream)
-Para correrlo localmente con la clase AdnApplication
+Para correrlo localmente con la clase AdnApplication o generar la imagen Docker
 Arquitectura DDD
 ```
 
